@@ -8,9 +8,9 @@ export class TimeAgoPipe implements PipeTransform {
 
   timeSince(value: Date): string {
     var now = new Date();
-    var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
+    // var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
 
-    const diff = Math.floor((utc.getTime() - new Date(value).getTime()) / 1000);
+    const diff = Math.floor((now.getTime() - new Date(value).getTime()) / 1000);
     if (diff < 60) {
       return diff + ' seconds ago';
     }
